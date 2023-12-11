@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function HelloWorld() {
+function HomePage() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -22,4 +22,4 @@ function HelloWorld() {
   );
 }
 
-export default HelloWorld;
+export default HomePage;
