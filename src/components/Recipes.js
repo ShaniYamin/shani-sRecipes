@@ -4,11 +4,18 @@ import RecipeCard from './RecipeCard';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
-
+  const deleteCardByID=(id)=>{
+    axios.delete(`http://127.0.0.1:8000/recipes/${id}`)
+      .then(response => {
+        setRecipes(response.data.recipes);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/recipes/')
       .then(response => {
-        console.log(response.data.recipes)
         setRecipes(response.data.recipes);
       })
       .catch(error => {
@@ -23,6 +30,7 @@ function Recipes() {
         <div className="row">
       {recipes.map((recipe,index) => (
         <RecipeCard
+        id={recipe.id}
         recipe_name={recipe.recipe_name}
         author_name={recipe.author_name}
         category={recipe.category}
@@ -33,6 +41,7 @@ function Recipes() {
         ingredients={recipe.ingredients.split("\n")}
         instructions={recipe.instructions.split("\n")}
         tips={recipe.tips}
+        deleteCardByID={deleteCardByID}
       />
         ))}
                 </div>

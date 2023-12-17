@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 
 const RecipeCard = ({
+  id,
   recipe_name,
   author_name,
   category,
@@ -12,10 +13,22 @@ const RecipeCard = ({
   ingredients,
   instructions,
   tips,
+  deleteCardByID
 }) => {
+  const deleteCard=()=>{
+    deleteCardByID(id)
+  }
   return (
     <Card className="w-25 h-50">
       <Card.Body>
+      <button
+          style={{ float: "right" }}
+          type="button"
+          class="btn btn-light"
+          onClick={deleteCard}
+        >
+          <span class="bi bi-trash"></span>
+        </button>
         <Card.Title>{recipe_name && `Recipe Name: ${recipe_name}`}</Card.Title>
         <Card.Text>{author_name && `Recipe by ${author_name}`}</Card.Text>
         <Card.Text>{category && `Category: ${category}`}</Card.Text>
@@ -25,7 +38,7 @@ const RecipeCard = ({
         <Card.Text>{servings && `Servings: ${servings} people`}</Card.Text>
         <Card.Text>{ingredients && `Ingredients:`}</Card.Text>
         {ingredients && (
-          <ol>{console.log("type- "+typeof(ingredients))}
+          <ol>
             {ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

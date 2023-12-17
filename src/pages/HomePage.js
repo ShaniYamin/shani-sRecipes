@@ -16,8 +16,9 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Recipe Home Page</h1>
+      <h1>Shani's Recipes</h1>
       <p>{message}</p>
+      <p>Enjoy Your Time</p>
     </div>
   );
 }

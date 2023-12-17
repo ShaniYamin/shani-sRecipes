@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Created from '../components/Created';
 
 function CreateRecipe() {
     const [formData, setFormData] = useState({
@@ -18,15 +17,6 @@ function CreateRecipe() {
         tips: '',
       });
 
-//   useEffect(() => {
-//     axios.post('http://127.0.0.1:8000/createRecipe/',)
-//       .then(response => {
-//         setMessage(response.data.message);
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   }, []);
   const handleChange=(e)=>{
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -37,13 +27,14 @@ function CreateRecipe() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://127.0.0.1:8000/createRecipe/',formData)
+    axios.post('http://127.0.0.1:8000/recipes/',formData)
       .then(response => {
-        // <Created newRec={response.data.recipes}></Created>
+       console.log(response.data.message);
       })
       .catch(error => {
         console.log(error);
       });
+      
   }
 
   return (
