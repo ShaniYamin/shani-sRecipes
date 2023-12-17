@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Shani's Recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Shani's Recipes, a delightful journey into the world of culinary delights! I'm Shani, the creator of this recipe website, and I'm excited to share with you the architecture and technologies behind this project.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+1. **Frontend: React**
+   - Shani's Recipes boasts a sleek and responsive user interface developed using React. The modern and dynamic nature of React allows for an interactive and user-friendly experience, making it easy for users to explore and discover delicious recipes.
 
-### `npm start`
+2. **Backend: Django**
+   - Powering the server-side of our application is Django, a high-level Python web framework. With Django, we've built a robust backend that handles user authentication, recipe storage, and various other functionalities. Django's "batteries-included" philosophy ensures a scalable and maintainable backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Database: MySQL**
+   - The heart of our recipe storage system is MySQL, a reliable relational database management system. It efficiently organizes and retrieves recipe data, ensuring a seamless experience for users as they browse, search, and save their favorite recipes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Custom API: Seamless Communication**
+   - To facilitate seamless communication between the frontend and backend components, we've implemented a custom API. This API acts as a bridge, ensuring that data flows smoothly between the user interface and the server, allowing for real-time updates and interactions.
 
-### `npm test`
+## Project Repositories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Shani-sRecipes Repo (Frontend)**
+   - For a glimpse of the beautiful and intuitive user interface, head over to the [Shani-sRecipes Repository](https://github.com/ShaniYamin/shani-sRecipes)
+. Here, you'll find the React codebase that brings our recipe website to life. Feel free to explore the components, styles, and interactions that make Shani's Recipes a visually appealing and user-centric platform.
 
-### `npm run build`
+2. **RecipesDjango Repo (Backend)**
+   - To dive into the backend magic that powers Shani's Recipes, visit the [RecipesDjango repository](https://github.com/ShaniYamin/RecipesDjango). This Django-based backend repository contains the logic for user authentication, recipe storage, and API endpoints. Explore the models, views, and serializers that make the backend robust and efficient.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to explore, contribute, and enjoy the culinary journey that Shani's Recipes have to offer. Happy cooking!
