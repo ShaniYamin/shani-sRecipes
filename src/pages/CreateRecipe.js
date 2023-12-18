@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from "react-router-dom";
 
 function CreateRecipe() {
     const [formData, setFormData] = useState({
@@ -15,7 +16,23 @@ function CreateRecipe() {
         ingredients: '',
         instructions: '',
         tips: '',
+        tags: '',
       });
+    //   const clearAllField=() =>{
+    //     setFormData({
+    //         recipeName: '',
+    //         authorName: '',
+    //         category: '',
+    //         prepTime: '',
+    //         cookTime: '',
+    //         totalTime: '',
+    //         servings: '',
+    //         ingredients: '',
+    //         instructions: '',
+    //         tips: '',
+    //         tags: ''
+    //     })
+    //   }
 
   const handleChange=(e)=>{
     const { name, value } = e.target;
@@ -24,12 +41,15 @@ function CreateRecipe() {
       [name]: value,
     }));
   }
-
+  let navigate = useNavigate()
   const handleSubmit=(e)=>{
     e.preventDefault();
+    
     axios.post('http://127.0.0.1:8000/recipes/',formData)
       .then(response => {
-       console.log(response.data.message);
+        alert("Your Recipe has been saved")
+        navigate("/recipes");
+        // clearAllField()
       })
       .catch(error => {
         console.log(error);
@@ -113,7 +133,13 @@ function CreateRecipe() {
             name="tips"
             value={formData.tips}
             onChange={handleChange} />
+              <Form.Label>Tags</Form.Label>
+              <Form.Control type="text" placeholder="tags" id="tags"
+            name="tags"
+            value={formData.tags}
+            onChange={handleChange} />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>

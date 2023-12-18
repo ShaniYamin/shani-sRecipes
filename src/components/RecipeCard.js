@@ -19,7 +19,7 @@ const RecipeCard = ({
     deleteCardByID(id)
   }
   return (
-    <Card className="w-25 h-50">
+    <Card className="w-50 h-50">
       <Card.Body>
       <button
           style={{ float: "right" }}

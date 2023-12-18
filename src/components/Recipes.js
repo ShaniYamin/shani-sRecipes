@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RecipeCard from './RecipeCard';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
+  let navigate = useNavigate()
+
+  const routeCreate=()=>{
+    navigate("/recipes/create");
+  }
   const deleteCardByID=(id)=>{
     axios.delete(`http://127.0.0.1:8000/recipes/${id}`)
       .then(response => {
@@ -13,6 +19,7 @@ function Recipes() {
         console.log(error);
       });
   }
+
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/recipes/')
       .then(response => {
@@ -26,6 +33,9 @@ function Recipes() {
   return (
     <div>
       <h1>Recipes Page</h1>
+      <button onClick={routeCreate}>
+      Create New Recipe
+      </button>
       <div className="container">
         <div className="row">
       {recipes.map((recipe,index) => (
@@ -44,8 +54,8 @@ function Recipes() {
         deleteCardByID={deleteCardByID}
       />
         ))}
-                </div>
-      </div>
+           </div>
+      </div> 
     </div>
   );
 }
