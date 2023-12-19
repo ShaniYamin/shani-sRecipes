@@ -2,11 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from '../logo.png'
+
 
 const NavBar= () => {
     return(
+        <div className='navbar'> 
         <Navbar expand="lg" className="bg-body-tertiary">
           <Container>
+          <Navbar.Brand><img src={logo} alt='logo' style={{ width: '50px', height: '50px' }}/></Navbar.Brand>
             <Navbar.Brand href="/">Shani's Recipes</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -28,7 +32,7 @@ const NavBar= () => {
               </Nav>
             </Navbar.Collapse>
           </Container>
-        </Navbar>
+        </Navbar></div>
      )
     
     }
