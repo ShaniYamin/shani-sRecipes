@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RecipeCard from './RecipeCard';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
@@ -38,22 +38,22 @@ function Recipes() {
       </button>
       <div className="container">
         <div className="row">
-      {recipes.map((recipe,index) => (
-        <RecipeCard
-        id={recipe.id}
-        recipe_name={recipe.recipe_name}
-        author_name={recipe.author_name}
-        category={recipe.category}
-        prep_time={recipe.prep_time}
-        cook_time={recipe.cook_time}
-        total_time={recipe.total_time}
-        servings={recipe.servings}
-        ingredients={recipe.ingredients.split("\n")}
-        instructions={recipe.instructions.split("\n")}
-        tips={recipe.tips}
-        deleteCardByID={deleteCardByID}
-      />
-        ))}
+            {recipes.map((recipe,index) => (
+                <RecipeCard
+                id={recipe.id}
+                recipe_name={recipe.recipe_name}
+                author_name={recipe.author_name}
+                category={recipe.category}
+                prep_time={recipe.prep_time}
+                cook_time={recipe.cook_time}
+                total_time={recipe.total_time}
+                servings={recipe.servings}
+                ingredients={recipe.ingredients.split("\n")}
+                instructions={recipe.instructions.split("\n")}
+                tips={recipe.tips}
+                deleteCardByID={deleteCardByID}
+                />
+            ))}
            </div>
       </div> 
     </div>
