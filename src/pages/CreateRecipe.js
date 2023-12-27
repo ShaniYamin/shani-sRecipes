@@ -18,6 +18,8 @@ function CreateRecipe() {
         tips: '',
         tags: '',
       });
+      const [categoryList,setCategoryList]= useState([]);
+      const [tagsList, setTagsList]=useState([]);
     //   const clearAllField=() =>{
     //     setFormData({
     //         recipeName: '',
@@ -57,6 +59,27 @@ function CreateRecipe() {
       
   }
 
+  const handleKeyDownCategory=(e)=>{
+    if(e.key!=='Enter') return 
+    const value= e.target.value
+    if(!value.trim())return
+    setCategoryList([...categoryList,value])
+    e.target.value=''
+  }
+  const removeCategory=(index)=>{
+    setCategoryList(categoryList.filter((el,i)=> i !== index ))
+  }
+  const handleKeyDownTags=(e)=>{
+    if(e.key!=='Enter') return 
+    const value= e.target.value
+    if(!value.trim())return
+    setTagsList([...tagsList,value])
+    e.target.value=''
+  }
+  const removeTags=(index)=>{
+    setTagsList(tagsList.filter((el,i)=> i !== index ))
+  }
+
   return (
     <div>
       <h1>Create Recipe Page</h1>
@@ -76,12 +99,25 @@ function CreateRecipe() {
             name="authorName"
             value={formData.authorName}
             onChange={handleChange} />
-        </div> <div class="col">
+        </div> 
+        <div class="col">
         <Form.Label>Category</Form.Label>
-        <Form.Control type="text" placeholder="Category" id="category"
+        {/* <Form.Control type="text" placeholder="Category" 
+            id="category"
             name="category"
             value={formData.category}
-            onChange={handleChange} />
+            onChange={handleChange} /> */}
+            {/* <Form.Control />  */}
+              <div className='category-input-container' >
+                {categoryList.map((category,index)=>(
+                  <div className='category-item' key={index}>
+                    <span className='text'>{category}</span>
+                    <span className='close' onClick={()=>removeCategory(index)}>&times;</span>
+                  </div>
+                ))}
+                <input onKeyDown={handleKeyDownCategory}></input>
+              </div>
+             
         </div>
         </div>
       </Form.Group>
@@ -133,11 +169,20 @@ function CreateRecipe() {
             name="tips"
             value={formData.tips}
             onChange={handleChange} />
-              <Form.Label>Tags</Form.Label>
-              <Form.Control type="text" placeholder="tags" id="tags"
+        <Form.Label>Tags</Form.Label>
+        {/* <Form.Control type="text" placeholder="tags" id="tags"
             name="tags"
             value={formData.tags}
-            onChange={handleChange} />
+            onChange={handleChange} /> */}
+        <div className='tag-input-container' >
+            {tagsList.map((tag,index)=>(
+              <div className='tag-item' key={index}>
+                <span className='text'>{tag}</span>
+                <span className='close' onClick={()=>removeTags(index)}>&times;</span>
+              </div>
+            ))}
+            <input onKeyDown={handleKeyDownTags}></input>
+          </div>
       </Form.Group>
 
       <Button variant="primary" type="submit">

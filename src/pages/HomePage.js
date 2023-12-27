@@ -9,6 +9,7 @@ function HomePage() {
     axios.get('http://127.0.0.1:8000/home/')
       .then(response => {
         setMessage(response.data.message);
+        // console.log(message);
       })
       .catch(error => {
         console.log(error);

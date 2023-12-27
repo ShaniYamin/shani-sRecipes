@@ -30,7 +30,7 @@ const SignIn = ()=>{
                         <NavDropdown.Item href="/user/profile">Profil</NavDropdown.Item>
                         <NavDropdown.Item href="/user/recipes">My Recipes</NavDropdown.Item>
                         <NavDropdown.Item href="/user/favorite">Saved Recipes</NavDropdown.Item>
-                        <NavDropdown.Item href="recipes/create">Create New Recipe</NavDropdown.Item>
+                        <NavDropdown.Item href="/recipes/create">Create New Recipe</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/" onClick={handleLogOut}>Log Out</NavDropdown.Item>
                         </NavDropdown>:
