@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../logo.png'
 import SignIn from '../googleSignIn/SignIn';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 
 const NavBar= () => {

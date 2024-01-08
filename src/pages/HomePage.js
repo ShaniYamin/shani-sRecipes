@@ -30,6 +30,7 @@ function HomePage() {
             I like to improvise and surprise (sometimes even myself). <br/>
             Hope you enjoy the site and learn that to prepare delicious food you don't have to work hard.
             </p>
+            {console.log(message)}
         </div>
       </div>
     </div> 

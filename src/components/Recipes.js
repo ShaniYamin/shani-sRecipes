@@ -48,8 +48,8 @@ function Recipes() {
                 cook_time={recipe.cook_time}
                 total_time={recipe.total_time}
                 servings={recipe.servings}
-                ingredients={recipe.ingredients.split("\n")}
-                instructions={recipe.instructions.split("\n")}
+                ingredients={recipe.ingredients}
+                instructions={recipe.instructions}
                 tips={recipe.tips}
                 deleteCardByID={deleteCardByID}
                 />

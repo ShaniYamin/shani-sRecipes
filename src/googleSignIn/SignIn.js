@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {auth,provider} from './config'
 import {signInWithPopup } from "firebase/auth"
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import axios from 'axios';
+// import axios from 'axios';
 
 const SignIn = ()=>{
     const [email,setEmail]= useState('')
