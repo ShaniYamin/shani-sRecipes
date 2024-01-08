@@ -24,7 +24,7 @@ const InstructionsForm = () => {
         {instructionsData.map((instruction,index) => (
        <div key={index} className="instruction-row mb-12">
        <input
-       style={{width:'88%',margin:'1%'}}
+       style={{width:'88%',margin:'1%',padding:'5px'}}
          type="text"
          placeholder="Instructions"
         //  value={instruction.Instruction}

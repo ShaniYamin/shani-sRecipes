@@ -119,7 +119,7 @@ function CreateRecipe() {
                 <span className='close' onClick={()=>removeCategory(index)}>&times;</span>
               </div>
             ))}
-            <input onKeyDown={handleKeyDownCategory}></input>
+            <input onKeyDown={handleKeyDownCategory} style={{padding:'5px'}} ></input>
           </div>
         </div>
         </div>
@@ -160,13 +160,14 @@ function CreateRecipe() {
             name="difficulty"
             onChange={handleChange} >
               <option value="" disabled selected>
-          Select
-        </option>
-              {difficultyOptions.map((option, index) => (
-              <option key={index} value={option}>
-                {option}
+                Select
               </option>
-            ))}</Form.Control>
+              {difficultyOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+                ))}
+            </Form.Control>
         </div>
       </div>
       </Form.Group>
@@ -185,14 +186,14 @@ function CreateRecipe() {
         </Form.Group>
       <Form.Group className="mb-3" controlId="part6">
         <Form.Label>Tags</Form.Label>
-        <div className='tag-input-container' >
+        <div className='tag-input-container'>
             {tagsList.map((tag,index)=>(
               <div className='tag-item' key={index}>
                 <span className='text'>{tag}</span>
                 <span className='close' onClick={()=>removeTags(index)}>&times;</span>
               </div>
             ))}
-            <input onKeyDown={handleKeyDownTags}></input>
+            <input onKeyDown={handleKeyDownTags} style={{padding:'5px'}}></input>
           </div>
       </Form.Group>
 

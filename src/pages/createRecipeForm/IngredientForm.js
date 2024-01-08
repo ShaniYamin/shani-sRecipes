@@ -32,7 +32,7 @@ const IngredientForm = () => {
             onDelete={handleDeleteRow}
           />
         ))}
-        <button onClick={handleAddRow}>Add Ingredient</button>
+        <button onClick={handleAddRow} style={{fontSize: '14px',padding:'2px'}} >Add Ingredient</button>
       </div>
     );
   };

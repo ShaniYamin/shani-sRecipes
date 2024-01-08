@@ -24,7 +24,7 @@ const TipsForm = () => {
         {tipsData.map((tip,index) => (
        <div key={index} className="tip-row">
        <input
-         style={{width:'88%',margin:'1%'}}
+         style={{width:'88%',margin:'1%',padding:'5px'}}
          type="text"
          placeholder="Write Tip"
          onChange={(e) => handleRowChange(e, index)}
@@ -39,7 +39,7 @@ const TipsForm = () => {
         </button>
      </div>
         ))}
-        <button onClick={handleAddRow}>Add Tip</button>
+        <button onClick={handleAddRow} style={{fontSize: '14px',padding:'2px'}}>Add Tip</button>
       </div>
     );
   };
