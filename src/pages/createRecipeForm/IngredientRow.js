@@ -32,10 +32,10 @@ const IngredientRow = ({ index, rowData, onChange,onDelete }) => {
         <button
         style={{width:'10%'}}
           type="button"
-          class="btn btn-light"
+          className="btn btn-light"
           onClick={deleteLine}
         >
-          <span class="bi bi-trash"></span>
+          <span className="bi bi-trash"></span>
         </button>
       </div>
     );

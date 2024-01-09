@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import IngredientForm from './createRecipeForm/IngredientForm';
 import InstructionsForm from './createRecipeForm/InstructionsForm';
 import TipsForm from './createRecipeForm/TipsForm';
+import TagsForm from './createRecipeForm/TagsForm';
+import DifficultyForm from './createRecipeForm/DifficultyForm';
+
 
 function CreateRecipe() {
     const [formData, setFormData] = useState({
@@ -40,9 +43,7 @@ function CreateRecipe() {
     //         tags: ''
     //     })
     //   }
-    const difficultyOptions=[
-      'Hard','Medium', 'Easy'
-    ];
+   
 
   const handleChange=(e)=>{
     const { name, value } = e.target;
@@ -65,37 +66,14 @@ function CreateRecipe() {
         console.log(error);
       });
       
-  }
-
-  const handleKeyDownCategory=(e)=>{
-    if(e.key!=='Enter') return 
-    const value= e.target.value
-    if(!value.trim())return
-    setCategoryList([...categoryList,value])
-    e.target.value=''
-  }
-  const removeCategory=(index)=>{
-    setCategoryList(categoryList.filter((el,i)=> i !== index ))
-  }
-
-  const handleKeyDownTags=(e)=>{
-    if(e.key!=='Enter') return 
-    const value= e.target.value
-    if(!value.trim())return
-    setTagsList([...tagsList,value])
-    e.target.value=''
-  }
-  const removeTags=(index)=>{
-    setTagsList(tagsList.filter((el,i)=> i !== index ))
-  }
-  
+  }  
 
   return (
     <div>
       <h1>Create Recipe Page</h1>
       <Form style={{width:'50%', margin: 'auto'}} onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="part1">
-      <div class="row">
+      <Form.Group className="mb-3" itemID='part1'>
+      <div className="row">
         <div style={{width:'31%',margin:'1%'}}>
         <Form.Label>Recipe Name</Form.Label>
         <Form.Control type="text" placeholder="Recipe Name"  id="recipeName"
@@ -110,22 +88,17 @@ function CreateRecipe() {
             value={formData.authorName}
             onChange={handleChange} />
         </div> 
-        <div style={{width:'32%',margin:'1%'}}>
-        <Form.Label>Category</Form.Label>
-          <div className='category-input-container' >
-            {categoryList.map((category,index)=>(
-              <div className='category-item' key={index}>
-                <span className='text'>{category}</span>
-                <span className='close' onClick={()=>removeCategory(index)}>&times;</span>
-              </div>
-            ))}
-            <input onKeyDown={handleKeyDownCategory} style={{padding:'5px'}} ></input>
-          </div>
-        </div>
+        <div style={{width:'31%',margin:'1%'}}>
+        <Form.Label>Author Email</Form.Label>
+        <Form.Control type="text" id="authorName"
+            name="authorName"
+            value={localStorage.getItem('email')}
+            disabled={true} />
+        </div> 
         </div>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="part2">
-      <div class="row">
+      <Form.Group className="mb-3"itemID='part2'>
+      <div className="row">
         <div style={{width:'15%',margin:'1%'}}>
           <Form.Label>Prep Time</Form.Label>
           <Form.Control type="number" id="prepTime"
@@ -156,45 +129,26 @@ function CreateRecipe() {
         </div>
         <div style={{width:'30%',margin:'1%'}}>
           <Form.Label>Difficulty</Form.Label>
-          <Form.Control as="select" id="difficulty"
-            name="difficulty"
-            onChange={handleChange} >
-              <option value="" disabled selected>
-                Select
-              </option>
-              {difficultyOptions.map((option, index) => (
-                <option key={index} value={option}>
-                  {option}
-                </option>
-                ))}
-            </Form.Control>
+         <DifficultyForm onChange={handleChange}/>
         </div>
       </div>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="part3">
+      <Form.Group className="mb-3"  itemID='part3'>
         <Form.Label>Ingredients</Form.Label>
         <IngredientForm/>
         </Form.Group>
-      <Form.Group className="mb-3" controlId="part4">
+      <Form.Group className="mb-3" itemID='part4'  >
         <Form.Label>Instructions</Form.Label>
         <InstructionsForm/>
         </Form.Group>
-      <Form.Group className="mb-3" controlId="part5">
+      <Form.Group className="mb-3" itemID='part5'>
         <Form.Label>Tips</Form.Label>
         <TipsForm/>
         </Form.Group>
-      <Form.Group className="mb-3" controlId="part6">
+      <Form.Group className="mb-3" itemID='part6'>
         <Form.Label>Tags</Form.Label>
-        <div className='tag-input-container'>
-            {tagsList.map((tag,index)=>(
-              <div className='tag-item' key={index}>
-                <span className='text'>{tag}</span>
-                <span className='close' onClick={()=>removeTags(index)}>&times;</span>
-              </div>
-            ))}
-            <input onKeyDown={handleKeyDownTags} style={{padding:'5px'}}></input>
-          </div>
+        <TagsForm/>
       </Form.Group>
 
       <Button variant="primary" type="submit">

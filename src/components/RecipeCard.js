@@ -24,10 +24,10 @@ const RecipeCard = ({
       <button
           style={{ float: "right" }}
           type="button"
-          class="btn btn-light"
+          className="btn btn-light"
           onClick={deleteCard}
         >
-          <span class="bi bi-trash"></span>
+          <span className="bi bi-trash"></span>
         </button>
         <Card.Title>{recipe_name && `Recipe Name: ${recipe_name}`}</Card.Title>
         <Card.Text>{author_name && `Recipe by ${author_name}`}</Card.Text>

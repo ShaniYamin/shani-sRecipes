@@ -33,10 +33,10 @@ const InstructionsForm = () => {
            <button
         style={{width:'10%'}}
           type="button"
-          class="btn btn-light"
+          className="btn btn-light"
           onClick={()=>deleteLine(index)}
         >
-          <span class="bi bi-trash"></span>
+          <span className="bi bi-trash"></span>
         </button>
      </div>
         ))}
