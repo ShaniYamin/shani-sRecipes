@@ -39,7 +39,7 @@ const TipsForm = () => {
         </button>
      </div>
         ))}
-        <button onClick={handleAddRow} style={{fontSize: '14px',padding:'2px'}}>Add Tip</button>
+        <button onClick={handleAddRow} style={{fontSize: '14px',padding:'2px'}}>Add Another Tip</button>
       </div>
     );
   };

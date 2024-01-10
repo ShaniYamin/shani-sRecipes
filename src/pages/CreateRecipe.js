@@ -14,7 +14,7 @@ function CreateRecipe() {
     const [formData, setFormData] = useState({
         recipeName: '',
         authorName: '',
-        category: '',
+        authorEmail: '',
         prepTime: '',
         cookTime: '',
         totalTime: '',
@@ -25,8 +25,6 @@ function CreateRecipe() {
         tips: '',
         tags: '',
       });
-      const [categoryList,setCategoryList]= useState([]);
-      const [tagsList, setTagsList]=useState([]);
 
     //   const clearAllField=() =>{
     //     setFormData({
@@ -70,7 +68,7 @@ function CreateRecipe() {
 
   return (
     <div>
-      <h1>Create Recipe Page</h1>
+      <h1>Create Recipe</h1>
       <Form style={{width:'50%', margin: 'auto'}} onSubmit={handleSubmit}>
       <Form.Group className="mb-3" itemID='part1'>
       <div className="row">
@@ -85,44 +83,44 @@ function CreateRecipe() {
         <Form.Label>Author Name</Form.Label>
         <Form.Control type="text" placeholder="Author Name" id="authorName"
             name="authorName"
-            value={formData.authorName}
-            onChange={handleChange} />
+            value={localStorage.getItem('userName')}
+            disabled={true} />
         </div> 
         <div style={{width:'31%',margin:'1%'}}>
         <Form.Label>Author Email</Form.Label>
-        <Form.Control type="text" id="authorName"
-            name="authorName"
+        <Form.Control type="text" id="authorEmail"
+            name="authorEmail"
             value={localStorage.getItem('email')}
             disabled={true} />
         </div> 
         </div>
       </Form.Group>
-      <Form.Group className="mb-3"itemID='part2'>
+      <Form.Group className="mb-3" itemID='part2'>
       <div className="row">
         <div style={{width:'15%',margin:'1%'}}>
           <Form.Label>Prep Time</Form.Label>
-          <Form.Control type="number" id="prepTime"
+          <Form.Control type="number" min='0' step='5' id="prepTime"
             name="prepTime"
             value={formData.prepTime}
             onChange={handleChange} />
         </div>
         <div style={{width:'15%',margin:'1%'}}>
           <Form.Label>Cook Time</Form.Label>
-          <Form.Control type="number" id="cookTime"
+          <Form.Control type="number" min='0' step='5' id="cookTime"
             name="cookTime"
             value={formData.cookTime}
             onChange={handleChange} />
         </div>
         <div style={{width:'15%',margin:'1%'}}>
           <Form.Label>Total Time</Form.Label>
-          <Form.Control type="number" id="totalTime"
+          <Form.Control type="number" min='0' step='5' id="totalTime"
             name="totalTime"
             value={formData.totalTime}
             onChange={handleChange} />
         </div>
         <div style={{width:'15%',margin:'1%'}}>
           <Form.Label>Servings</Form.Label>
-          <Form.Control type="number" id="servings"
+          <Form.Control type="number" min='0' id="servings"
             name="servings"
             value={formData.servings}
             onChange={handleChange} />

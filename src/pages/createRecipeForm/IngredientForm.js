@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import IngredientRow from "./IngredientRow";
+import axios from 'axios';
 
 const IngredientForm = () => {
     const [ingredientsData, setIngredientsData] = useState([
       { quantity: '', unit: '', ingredient: '' },
     ]);
+    const [ingredientsOptions, setIngredientsOptions] = useState([]);
+        // { value: 'suger',label:'Suger'},
+        // { value: 'garlic',label:'Garlic'},
+        // { value: 'pasta',label:'Pasta'}]);
+    const [unitsOptions, setUnitsOptions] = useState([]);
+        // { value: 'cup',label:'Cups'},
+        // { value: 'grams',label:'Grams'},
+        // { value: 'spoon',label:'Spoon'}]);   
   
     const handleRowChange = (index, fieldName, value) => {
       const updatedGridData = [...ingredientsData];
@@ -22,6 +31,22 @@ const IngredientForm = () => {
         setIngredientsData(updatedGridData);
       };
   
+      useEffect(() => {
+        axios.get('http://127.0.0.1:8000/ingredients/')
+          .then(response => {
+            setIngredientsOptions(response.data.ingredients);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+         axios.get('http://127.0.0.1:8000/units/')
+          .then(response => {
+            setUnitsOptions(response.data.units);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }, []);
     return (
       <div>
         {ingredientsData.map((rowData, index) => (
@@ -30,6 +55,8 @@ const IngredientForm = () => {
             index={index}
             rowData={rowData}
             onChange={handleRowChange}
+            ingredientsOptions={ingredientsOptions}
+            unitsOptions={unitsOptions}
             onDelete={handleDeleteRow}
           />
         ))}
