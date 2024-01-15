@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RecipeCard from './RecipeCard';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
-  const routeCreate=()=>{
-    navigate("/recipes/create");
-  }
+  // const routeCreate=()=>{
+  //   navigate("/recipes/create");
+  // }
   const deleteCardByID=(id)=>{
     axios.delete(`http://127.0.0.1:8000/recipes/${id}`)
       .then(response => {
@@ -33,9 +33,14 @@ function Recipes() {
   return (
     <div>
       <h1>Recipes Page</h1>
-      <button onClick={routeCreate}>
+      {/* <button onClick={routeCreate}>
       Create New Recipe
-      </button>
+      </button> */}
+      {recipes.length===0?
+      <div>
+        <p>There are no recipes yet</p>
+        <p>You can SignIn and create one</p>
+        </div>:
       <div className="container">
         <div className="row">
             {recipes.map((recipe,index) => (
@@ -55,7 +60,7 @@ function Recipes() {
                 />
             ))}
            </div>
-      </div> 
+      </div> }
     </div>
   );
 }

@@ -4,17 +4,21 @@ import CreatableSelect from 'react-select/creatable';
 const IngredientRow = ({ index, rowData, onChange,ingredientsOptions,unitsOptions,onDelete }) => {
     const [selectedIngredient,setSelectedIngredient]=useState('');
     const [selectedUnit,setSelectedUnit]=useState('');
-    const handleInputChange = (event, fieldName) => {
+    
+    const handleQuantityChange = (event, fieldName) => {
       onChange(index, fieldName, event.target.value);
     };
     const handleIngredientChange=(selected)=>{
         setSelectedIngredient(selected);
+        onChange(index,'ingredient',selected.value)
     };
     const handleUnitChange=(selected)=>{
         setSelectedUnit(selected);
+        onChange(index,'unit',selected.value)
     };
     const deleteLine=()=>{
         onDelete(index);
+
     };
   
     return (
@@ -24,11 +28,9 @@ const IngredientRow = ({ index, rowData, onChange,ingredientsOptions,unitsOption
           type="text"
           placeholder="Quantity"
           value={rowData.quantity}
-          onChange={(e) => handleInputChange(e, 'quantity')}
+          onChange={(e) => handleQuantityChange(e, 'quantity')}
         />
-        <div 
-        onChange={(e) => handleInputChange(e, 'unit')}  
-        style={{width:'28%',margin:'1%'}} >
+        <div style={{width:'28%',margin:'1%'}} >
          <CreatableSelect
             placeholder="Unit"
             value={selectedUnit}
@@ -37,9 +39,7 @@ const IngredientRow = ({ index, rowData, onChange,ingredientsOptions,unitsOption
             isOptionSelected={false}
             />
         </div>
-        <div 
-        onChange={(e) => handleInputChange(e, 'ingredient')}  
-        style={{width:'38%',margin:'1%'}} >
+        <div style={{width:'38%',margin:'1%'}} >
          <CreatableSelect
             placeholder="Ingredient"
             value={selectedIngredient}

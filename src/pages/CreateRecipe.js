@@ -25,23 +25,12 @@ function CreateRecipe() {
         tips: '',
         tags: '',
       });
-
-    //   const clearAllField=() =>{
-    //     setFormData({
-    //         recipeName: '',
-    //         authorName: '',
-    //         category: '',
-    //         prepTime: '',
-    //         cookTime: '',
-    //         totalTime: '',
-    //         servings: '',
-    //         ingredients: '',
-    //         instructions: '',
-    //         tips: '',
-    //         tags: ''
-    //     })
-    //   }
-   
+      const [ingredientsData, setIngredientsData] = useState([
+        { quantity: '', unit: '', ingredient: '' },
+      ]);
+      const [instructionsData, setInstructionsData] = useState([
+        { Instruction: ''},
+      ]);
 
   const handleChange=(e)=>{
     const { name, value } = e.target;
@@ -50,26 +39,33 @@ function CreateRecipe() {
       [name]: value,
     }));
   }
+  const deleteInstruction=(index)=>{
+    const updatedGridData = [...instructionsData];
+    updatedGridData.splice(index, 1);
+    setInstructionsData(updatedGridData);
+  }
+  // if(ingredientsData){
+  //   console.log(ingredientsData)
+  // }
   let navigate = useNavigate()
   const handleSubmit=(e)=>{
     e.preventDefault();
-    
     axios.post('http://127.0.0.1:8000/recipes/',formData)
       .then(response => {
         alert("Your Recipe has been saved")
         navigate("/recipes");
-        // clearAllField()
       })
       .catch(error => {
         console.log(error);
       });
-      
   }  
 
   return (
     <div>
       <h1>Create Recipe</h1>
-      <Form style={{width:'50%', margin: 'auto'}} onSubmit={handleSubmit}>
+      <Form style={{width:'50%', margin: 'auto'}} 
+       onSubmit={handleSubmit}
+      >
       <Form.Group className="mb-3" itemID='part1'>
       <div className="row">
         <div style={{width:'31%',margin:'1%'}}>
@@ -134,11 +130,11 @@ function CreateRecipe() {
 
       <Form.Group className="mb-3"  itemID='part3'>
         <Form.Label>Ingredients</Form.Label>
-        <IngredientForm/>
+        <IngredientForm setIngredientsData = {setIngredientsData} ingredientsData={ingredientsData}/>
         </Form.Group>
       <Form.Group className="mb-3" itemID='part4'  >
         <Form.Label>Instructions</Form.Label>
-        <InstructionsForm/>
+        <InstructionsForm setInstructionsData={setInstructionsData} instructionsData={instructionsData} deleteInstruction={deleteInstruction}/>
         </Form.Group>
       <Form.Group className="mb-3" itemID='part5'>
         <Form.Label>Tips</Form.Label>
@@ -149,7 +145,7 @@ function CreateRecipe() {
         <TagsForm/>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Submit
       </Button>
     </Form>

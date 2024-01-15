@@ -2,10 +2,10 @@ import { useState,useEffect } from "react";
 import IngredientRow from "./IngredientRow";
 import axios from 'axios';
 
-const IngredientForm = () => {
-    const [ingredientsData, setIngredientsData] = useState([
-      { quantity: '', unit: '', ingredient: '' },
-    ]);
+const IngredientForm = ({setIngredientsData,ingredientsData}) => {
+    // const [ingredientsData, setIngredientsData] = useState([
+    //   { quantity: '', unit: '', ingredient: '' },
+    // ]);
     const [ingredientsOptions, setIngredientsOptions] = useState([]);
         // { value: 'suger',label:'Suger'},
         // { value: 'garlic',label:'Garlic'},
@@ -21,14 +21,16 @@ const IngredientForm = () => {
       setIngredientsData(updatedGridData);
     };
   
-    const handleAddRow = () => {
-        setIngredientsData([...ingredientsData, { quantity: '', unit: '', ingredient: '' }]);
+    const handleAddRow = (event) => {
+      event.stopPropagation();
+      setIngredientsData([...ingredientsData, { quantity: '', unit: '', ingredient: '' }]);
     };
 
     const handleDeleteRow = (index) => {
         const updatedGridData = [...ingredientsData];
         updatedGridData.splice(index, 1);
         setIngredientsData(updatedGridData);
+        console.log("update",updatedGridData)
       };
   
       useEffect(() => {
@@ -60,7 +62,7 @@ const IngredientForm = () => {
             onDelete={handleDeleteRow}
           />
         ))}
-        <button onClick={handleAddRow} style={{fontSize: '14px',padding:'2px'}} >Add Ingredient</button>
+        <button  onMouseDown={handleAddRow} style={{fontSize: '14px',padding:'2px'}} >Add Ingredient</button>
       </div>
     );
   };
