@@ -2,15 +2,10 @@
 import React from "react";
 
 
-const InstructionsForm = ({setInstructionsData,instructionsData,deleteInstruction}) => {
+const InstructionsForm = ({setInstructionsData,instructionsData}) => {
   const handleRowChange = (event, index) => {
     const updatedGridData = [...instructionsData];
-    updatedGridData[index] = {
-      ...updatedGridData[index],
-      Instruction: event.target.value,
-    };
-    console.log("aaaaaaaaaaaaaaaaaaa");
-    console.log(updatedGridData)
+    updatedGridData[index] = event.target.value;
     setInstructionsData(updatedGridData);
   };
   
@@ -19,15 +14,9 @@ const InstructionsForm = ({setInstructionsData,instructionsData,deleteInstructio
     };
 
     const deleteLine=(index)=>{
-        // const updatedGridData = [...instructionsData];
-        // updatedGridData.splice(index, 1);
-        // // const update = updatedGridData.filter(item => item.index !==index )
-        // // console.log(updatedGridData);
-        // setInstructionsData(updatedGridData);
-        //console.log(instructionsData)
-        // setInstructionsData((prevInstruction) =>  prevInstruction.filter((prevItem) =>  prevItem !== instruction) )
-        // console.log(instruction);
-        deleteInstruction(index);
+      const updatedGridData = [...instructionsData];
+      updatedGridData.splice(index, 1);
+      setInstructionsData(updatedGridData);
     };
     
     return (

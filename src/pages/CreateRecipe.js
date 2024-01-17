@@ -13,17 +13,17 @@ import DifficultyForm from './createRecipeForm/DifficultyForm';
 function CreateRecipe() {
     const [formData, setFormData] = useState({
         recipeName: '',
-        authorName: '',
-        authorEmail: '',
+        authorName: localStorage.getItem('userName'),
+        authorEmail: localStorage.getItem('email'),
         prepTime: '',
         cookTime: '',
         totalTime: '',
         servings: '',
         difficulty:'',
-        ingredients: '',
-        instructions: '',
-        tips: '',
-        tags: '',
+        ingredients: [],
+        instructions: [],
+        tips: [],
+        tags: [],
       });
       const [ingredientsData, setIngredientsData] = useState([
         { quantity: '', unit: '', ingredient: '' },
@@ -31,6 +31,11 @@ function CreateRecipe() {
       const [instructionsData, setInstructionsData] = useState([
         { Instruction: ''},
       ]);
+      const [tipsData, setTipsData] = useState([
+        { tip: ''},
+      ]);
+      const [selectedTags, setSelectedTags] = useState([])
+
 
   const handleChange=(e)=>{
     const { name, value } = e.target;
@@ -39,17 +44,19 @@ function CreateRecipe() {
       [name]: value,
     }));
   }
-  const deleteInstruction=(index)=>{
-    const updatedGridData = [...instructionsData];
-    updatedGridData.splice(index, 1);
-    setInstructionsData(updatedGridData);
-  }
-  // if(ingredientsData){
-  //   console.log(ingredientsData)
-  // }
+
+
   let navigate = useNavigate()
   const handleSubmit=(e)=>{
     e.preventDefault();
+    setFormData((prevData) => ({
+      ...prevData,
+      "ingredients": ingredientsData,
+      "instructions": instructionsData,
+      "tips": tipsData,
+      "tags": selectedTags,
+    }));
+    console.log("formData-",formData)
     axios.post('http://127.0.0.1:8000/recipes/',formData)
       .then(response => {
         alert("Your Recipe has been saved")
@@ -134,15 +141,15 @@ function CreateRecipe() {
         </Form.Group>
       <Form.Group className="mb-3" itemID='part4'  >
         <Form.Label>Instructions</Form.Label>
-        <InstructionsForm setInstructionsData={setInstructionsData} instructionsData={instructionsData} deleteInstruction={deleteInstruction}/>
+        <InstructionsForm setInstructionsData={setInstructionsData} instructionsData={instructionsData} />
         </Form.Group>
       <Form.Group className="mb-3" itemID='part5'>
         <Form.Label>Tips</Form.Label>
-        <TipsForm/>
+        <TipsForm setTipsData={setTipsData} tipsData={tipsData}/>
         </Form.Group>
       <Form.Group className="mb-3" itemID='part6'>
         <Form.Label>Tags</Form.Label>
-        <TagsForm/>
+        <TagsForm selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
       </Form.Group>
 
       <Button variant="primary" type="submit" >

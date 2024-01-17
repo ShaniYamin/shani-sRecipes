@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Form } from 'react-bootstrap';
 import CreatableSelect from 'react-select/creatable';
 
-const TagsForm = () => {
-  const [selectedTags, setSelectedTags] = useState([])
+const TagsForm = ({selectedTags,setSelectedTags}) => {
   const [tagsOptions, setTagsOptions] = useState([]);
     // { value: 'tag1',label:'Tag 1'},
     // { value: 'tag2',label:'Tag 2'},

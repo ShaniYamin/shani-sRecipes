@@ -6,7 +6,7 @@ const DifficultyForm=({onChange})=>{
 
     return(
         <Form>
-        <Form.Control as="select" id="difficulty" defaultValue="select"
+        <Form.Control as="select" id="difficulty" defaultValue="select" name="difficulty"
         onChange={onChange} >
             
           <option value="select"  disabled >

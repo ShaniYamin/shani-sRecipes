@@ -1,8 +1,6 @@
-import { useState } from "react";
-const TipsForm = () => {
-    const [tipsData, setTipsData] = useState([
-      { Instruction: ''},
-    ]);
+
+const TipsForm = ({setTipsData,tipsData}) => {
+
     const deleteLine=(index)=>{
         const updatedGridData = [...tipsData];
         updatedGridData.splice(index, 1);
