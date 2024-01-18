@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -20,11 +20,12 @@ function CreateRecipe() {
         totalTime: '',
         servings: '',
         difficulty:'',
-        ingredients: [],
-        instructions: [],
-        tips: [],
-        tags: [],
+        ingredients: {},
+        instructions: {},
+        tips: {},
+        tags: {},
       });
+      const [submitted,SetSubmitted] = useState(false);
       const [ingredientsData, setIngredientsData] = useState([
         { quantity: '', unit: '', ingredient: '' },
       ]);
@@ -49,6 +50,10 @@ function CreateRecipe() {
   let navigate = useNavigate()
   const handleSubmit=(e)=>{
     e.preventDefault();
+    SetSubmitted(!submitted)
+  }  
+
+  useEffect(()=>{
     setFormData((prevData) => ({
       ...prevData,
       "ingredients": ingredientsData,
@@ -56,16 +61,18 @@ function CreateRecipe() {
       "tips": tipsData,
       "tags": selectedTags,
     }));
-    console.log("formData-",formData)
+    // console.log("formData-",formData)
+    alert("You Create recipe")
     axios.post('http://127.0.0.1:8000/recipes/',formData)
       .then(response => {
         alert("Your Recipe has been saved")
-        navigate("/recipes");
+        // navigate("/recipes");
       })
       .catch(error => {
         console.log(error);
       });
-  }  
+  },[submitted]);
+
 
   return (
     <div>

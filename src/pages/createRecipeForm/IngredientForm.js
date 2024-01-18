@@ -20,7 +20,7 @@ const IngredientForm = ({setIngredientsData,ingredientsData}) => {
       updatedGridData[index][fieldName] = value;
       setIngredientsData(updatedGridData);
     };
-  
+    
     const handleAddRow = (event) => {
       event.stopPropagation();
       setIngredientsData([...ingredientsData, { quantity: '', unit: '', ingredient: '' }]);
@@ -62,7 +62,7 @@ const IngredientForm = ({setIngredientsData,ingredientsData}) => {
             onDelete={handleDeleteRow}
           />
         ))}
-        <button  onMouseDown={handleAddRow} style={{fontSize: '14px',padding:'2px'}} >Add Ingredient</button>
+        <button onMouseDown={handleAddRow} style={{fontSize: '14px',padding:'2px'}} >Add Ingredient</button>
       </div>
     );
   };

@@ -47,7 +47,7 @@ function Recipes() {
                 <RecipeCard
                 id={recipe.id}
                 recipe_name={recipe.recipe_name}
-                author_name={recipe.author_name}
+                author_name={recipe.author}
                 category={recipe.category}
                 prep_time={recipe.prep_time}
                 cook_time={recipe.cook_time}
