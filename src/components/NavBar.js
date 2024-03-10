@@ -34,7 +34,7 @@ const NavBar = () => {
             <Navbar.Brand>
             <img src={logo} alt='logo' style={{ width: '50px', height: '50px' }}/>
             </Navbar.Brand>
-            <Navbar.Brand href="/">Shani's Recipes</Navbar.Brand>
+            <Navbar.Brand href="/">RecipesHub</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav"  style={{justifyContent: 'space-between',}}>
             <Nav className="me-auto">
