@@ -9,15 +9,15 @@ import { useState } from 'react';
 
 
 const NavBar = () => {
-    const [isUserSignIn,setisUserSignIn] = useState(!!localStorage.getItem('userName'));
+    const [isUserSignIn,setisUserSignIn] = useState(!!sessionStorage.getItem('userName'));
     const handleLogOut= ()=>{
-        localStorage.clear()
+        sessionStorage.clear()
         window.location.reload()
         setisUserSignIn(false);
     }
     const loggedIn=()=>{
         return(
-            <NavDropdown title={localStorage.getItem('userName')} id="basic-nav-dropdown">
+            <NavDropdown title={sessionStorage.getItem('userName')} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/user/profile">Profil</NavDropdown.Item>
                 <NavDropdown.Item href="/user/recipes">My Recipes</NavDropdown.Item>
                 <NavDropdown.Item href="/user/favorite">Saved Recipes</NavDropdown.Item>

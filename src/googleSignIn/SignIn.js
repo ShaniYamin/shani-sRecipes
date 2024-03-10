@@ -13,8 +13,8 @@ const SignIn = ({setisUserSignIn})=>{
             setEmail(data.user.email);
             setUserName(data.user.displayName)
             setisUserSignIn(true)
-            localStorage.setItem('email',data.user.email)
-            localStorage.setItem('userName',data.user.displayName)
+            sessionStorage.setItem('email',data.user.email)
+            sessionStorage.setItem('userName',data.user.displayName)
         }).catch((error)=>{
             console.log(error);
         }) 

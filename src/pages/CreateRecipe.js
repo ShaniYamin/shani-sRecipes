@@ -13,8 +13,8 @@ import DifficultyForm from './createRecipeForm/DifficultyForm';
 function CreateRecipe() {
     const [formData, setFormData] = useState({
         recipeName: '',
-        authorName: localStorage.getItem('userName'),
-        authorEmail: localStorage.getItem('email'),
+        authorName: sessionStorage.getItem('userName'),
+        authorEmail: sessionStorage.getItem('email'),
         prepTime: '',
         cookTime: '',
         totalTime: '',
@@ -54,6 +54,7 @@ function CreateRecipe() {
   }  
 
   useEffect(()=>{
+    // e.preventDefault();
     setFormData((prevData) => ({
       ...prevData,
       "ingredients": ingredientsData,
@@ -93,14 +94,14 @@ function CreateRecipe() {
         <Form.Label>Author Name</Form.Label>
         <Form.Control type="text" placeholder="Author Name" id="authorName"
             name="authorName"
-            value={localStorage.getItem('userName')}
+            value={sessionStorage.getItem('userName')}
             disabled={true} />
         </div> 
         <div style={{width:'31%',margin:'1%'}}>
         <Form.Label>Author Email</Form.Label>
         <Form.Control type="text" id="authorEmail"
             name="authorEmail"
-            value={localStorage.getItem('email')}
+            value={sessionStorage.getItem('email')}
             disabled={true} />
         </div> 
         </div>
