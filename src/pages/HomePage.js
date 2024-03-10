@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import backgroundVideo from '../assets/BG.mp4'
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   const [message, setMessage] = useState('');
-
+  const handleOpenCV=()=>{
+    const url = 'https://drive.google.com/file/d/1sGKSWBEVeLTQkQIYUNrBkzbw-aORjJX0/view?usp=sharing';
+    window.open(url, '_blank');
+  }
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/home/')
       .then(response => {
@@ -29,6 +33,7 @@ function HomePage() {
           Passionate about mentorship, particularly empowering young girls in technology, <br/>
           I am now eager to channel my skills into a dynamic role as a Software Engineer.
             </p>
+            <div><button className='btn btn-outline-dark' onClick={handleOpenCV}>Go to CV</button></div>
             {console.log(message)}
         </div>
       </div>
