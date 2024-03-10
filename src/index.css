@@ -35,12 +35,8 @@ video{
   padding: 10px;
 }
 
-/* .main .content{
-  position: relative;
-} */
 
 .overlay{
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
@@ -48,6 +44,6 @@ video{
   background-color: rgba(0,0,0,.4);
 }
 
-/* .navbar + .content {
-  position: absolute;
-} */
+.container{
+  padding: 10px;
+}

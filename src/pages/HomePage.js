@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import backgroundVideo from '../assets/BG.mp4'
-import { Link } from 'react-router-dom';
 
 function HomePage() {
   const [message, setMessage] = useState('');

@@ -1,0 +1,224 @@
+[
+    {
+      "id": 1,
+      "recipe_name": "Spaghetti Bolognese",
+      "image":"/img/spaghetti-bolognese.jpg",
+      "author_name": "Jamie Oliver",
+      "prep_time": 15,
+      "cook_time": 45,
+      "total_time": 60,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "500g spaghetti",
+        "400g ground beef",
+        "1 large onion, diced",
+        "2 cloves garlic, minced",
+        "1 can crushed tomatoes",
+        "2 tablespoons tomato paste",
+        "1 teaspoon dried oregano",
+        "1 teaspoon dried basil",
+        "1/2 cup red wine (optional)",
+        "salt and pepper to taste",
+        "grated Parmesan cheese, for serving"
+      ],
+      "instructions": [
+        "Cook spaghetti according to package instructions; drain and set aside.",
+        "In a large skillet, brown ground beef over medium heat. Drain excess fat.",
+        "Add diced onion and minced garlic to the skillet; cook until softened.",
+        "Stir in crushed tomatoes, tomato paste, oregano, basil, and red wine (if using).",
+        "Simmer sauce for 20-30 minutes, stirring occasionally.",
+        "Season with salt and pepper to taste.",
+        "Serve sauce over cooked spaghetti, topped with grated Parmesan cheese."
+      ],
+      "tips": [
+        "For extra flavor, add a splash of balsamic vinegar to the sauce.",
+        "Leftover sauce can be stored in an airtight container in the refrigerator for up to 3 days, or frozen for longer storage."
+      ],
+      "tags": ["pasta", "Italian", "comfort food"]
+    },
+    {
+      "id": 2,
+      "recipe_name": "Chicken Stir Fry",
+      "image":"/img/chicken-stir-fry.jpg",
+      "author_name": "Gordon Ramsay",
+      "prep_time": 20,
+      "cook_time": 15,
+      "total_time": 35,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "500g thinly sliced chicken breast",
+        "1 cup broccoli florets",
+        "1 bell pepper, sliced",
+        "1 carrot, julienned",
+        "1/2 cup soy sauce",
+        "2 tablespoons sesame oil",
+        "2 cloves garlic, minced",
+        "1 tablespoon grated ginger",
+        "2 tablespoons cornstarch",
+        "1/4 cup water",
+        "cooked rice, for serving"
+      ],
+      "instructions": [
+        "In a small bowl, whisk together soy sauce, sesame oil, minced garlic, grated ginger, cornstarch, and water to make the sauce.",
+        "Heat a large skillet or wok over high heat. Add a drizzle of oil.",
+        "Add sliced chicken breast to the skillet and stir-fry until browned and cooked through. Remove from skillet and set aside.",
+        "Add more oil to the skillet if needed. Stir-fry broccoli florets, sliced bell pepper, and julienned carrot until tender-crisp.",
+        "Return cooked chicken to the skillet. Pour sauce over chicken and vegetables; stir until everything is coated and sauce has thickened.",
+        "Serve hot over cooked rice."
+      ],
+      "tips": [
+        "For a spicier stir-fry, add sliced red chili peppers or a dash of sriracha sauce to the sauce mixture.",
+        "Feel free to customize with your favorite vegetables such as snap peas, mushrooms, or baby corn."
+      ],
+      "tags": ["Asian", "stir-fry", "quick and easy"]
+    },
+    {
+      "id": 3,
+      "recipe_name": "Classic Margherita Pizza",
+      "image":"/img/margherita-pizza.jpeg",
+      "author_name": "Giada De Laurentiis",
+      "prep_time": 30,
+      "cook_time": 15,
+      "total_time": 45,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "1 lb pizza dough",
+        "1/2 cup tomato sauce",
+        "8 oz fresh mozzarella cheese, sliced",
+        "1/4 cup fresh basil leaves",
+        "2 tablespoons extra-virgin olive oil",
+        "salt and pepper to taste",
+        "flour for dusting"
+      ],
+      "instructions": [
+        "Preheat oven to 475°F (245°C).",
+        "Roll out pizza dough on a floured surface to desired thickness.",
+        "Transfer dough to a pizza stone or baking sheet.",
+        "Spread tomato sauce evenly over dough.",
+        "Arrange slices of fresh mozzarella cheese on top of the sauce.",
+        "Drizzle olive oil over the pizza and season with salt and pepper.",
+        "Bake in preheated oven for 12-15 minutes or until crust is golden brown and cheese is bubbly.",
+        "Remove from oven and sprinkle with fresh basil leaves before serving."
+      ],
+      "tips": [
+        "For an extra crispy crust, preheat a pizza stone in the oven before placing the pizza on it.",
+        "Feel free to add additional toppings such as sliced tomatoes or olives."
+      ],
+      "tags": ["pizza", "Italian", "vegetarian"]
+    },
+    {
+      "id": 4,
+      "recipe_name": "Chicken Caesar Salad",
+      "image":"/img/chicken-caesar-salad.jpeg",
+      "author_name": "Ina Garten",
+      "prep_time": 20,
+      "cook_time": 10,
+      "total_time": 30,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "2 chicken breasts, boneless, skinless",
+        "1 head romaine lettuce, chopped",
+        "1/2 cup Caesar dressing",
+        "1/4 cup grated Parmesan cheese",
+        "1 cup croutons",
+        "salt and pepper to taste"
+      ],
+      "instructions": [
+        "Season chicken breasts with salt and pepper.",
+        "Grill or pan-fry chicken until cooked through, about 5 minutes per side.",
+        "Let chicken rest for a few minutes, then slice into strips.",
+        "In a large bowl, toss chopped romaine lettuce with Caesar dressing until evenly coated.",
+        "Add sliced chicken, grated Parmesan cheese, and croutons to the bowl; toss to combine.",
+        "Serve immediately."
+      ],
+      "tips": [
+        "For added flavor, toss croutons with a bit of olive oil and garlic powder before adding to the salad.",
+        "Feel free to add cherry tomatoes or avocado slices for extra freshness."
+      ],
+      "tags": ["salad", "chicken", "classic"]
+    },
+    {
+      "id": 5,
+      "recipe_name": "Chocolate Chip Cookies",
+      "image":"/img/chocolate-chip-cookies.jpeg",
+      "author_name": "Martha Stewart",
+      "prep_time": 15,
+      "cook_time": 10,
+      "total_time": 25,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "1 cup unsalted butter, softened",
+        "3/4 cup granulated sugar",
+        "3/4 cup packed brown sugar",
+        "2 large eggs",
+        "1 teaspoon vanilla extract",
+        "2 1/4 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "1/2 teaspoon salt",
+        "2 cups semisweet chocolate chips"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "In a large mixing bowl, cream together softened butter, granulated sugar, and brown sugar until smooth.",
+        "Beat in eggs one at a time, then stir in vanilla extract.",
+        "In a separate bowl, combine flour, baking soda, and salt.",
+        "Gradually add dry ingredients to the wet mixture, mixing until well combined.",
+        "Stir in chocolate chips.",
+        "Drop tablespoon-sized balls of dough onto ungreased baking sheets, spacing them about 2 inches apart.",
+        "Bake in preheated oven for 8-10 minutes or until edges are golden brown.",
+        "Allow cookies to cool on baking sheets for a few minutes before transferring to wire racks to cool completely."
+      ],
+      "tips": [
+        "For extra chewy cookies, slightly underbake them; for crispier cookies, bake them a bit longer.",
+        "Add chopped nuts or dried fruits for variation."
+      ],
+      "tags": ["dessert", "cookies", "chocolate"]
+    },
+    {
+      "id": 6,
+      "recipe_name": "Vegetable Stir Fry",
+      "image":"/img/vegetable-stir-fry.jpeg",      
+      "author_name": "Nigella Lawson",
+      "prep_time": 15,
+      "cook_time": 10,
+      "total_time": 25,
+      "servings":4,
+      "difficulty":"medium",
+      "ingredients": [
+        "2 tablespoons vegetable oil",
+        "1 cup broccoli florets",
+        "1 bell pepper, red, sliced",
+        "1 carrot, julienned",
+        "1 cup snap peas",
+        "1 cup mushrooms, sliced",
+        "2 cloves garlic, minced",
+        "1 tablespoon ginger, grated",
+        "1/4 cup soy sauce",
+        "2 tablespoons hoisin sauce",
+        "1 teaspoon sesame oil",
+        "1 teaspoon cornstarch dissolved in 2 tablespoons water",
+        "cooked rice, for serving"
+      ],
+      "instructions": [
+        "In a small bowl, mix together soy sauce, hoisin sauce, sesame oil, and cornstarch mixture; set aside.",
+        "Heat vegetable oil in a large skillet or wok over high heat.",
+        "Add minced garlic and grated ginger to the skillet; stir-fry for 30 seconds.",
+        "Add broccoli florets, sliced bell pepper, julienned carrot, snap peas, and sliced mushrooms to the skillet; stir-fry until vegetables are tender-crisp.",
+        "Pour the sauce mixture over the vegetables and stir until well combined and sauce has thickened.",
+        "Serve hot over cooked rice."
+      ],
+      "tips": [
+        "Feel free to add tofu, chicken, or shrimp for added protein.",
+        "Garnish with chopped green onions or sesame seeds before serving."
+      ],
+      "tags": ["stir-fry", "vegetarian", "Asian"]
+    }
+  ]
+  
+  
+  
