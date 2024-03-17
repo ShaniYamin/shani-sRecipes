@@ -5,7 +5,7 @@ import backgroundVideo from '../assets/BG.mp4'
 function HomePage() {
   const [message, setMessage] = useState('');
   const handleOpenCV=()=>{
-    const url = 'https://drive.google.com/file/d/1X92YhoEHEj9xlveGhhDLB9Slrf_fC8Qc/view?usp=sharing';
+    const url = 'https://drive.google.com/file/d/1r_6Y3BvHEUGoKXorb9wfh4cl4kY3pEgw/view?usp=sharing';
     window.open(url, '_blank');
   }
   useEffect(() => {
