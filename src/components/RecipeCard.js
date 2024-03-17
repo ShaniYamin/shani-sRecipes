@@ -1,28 +1,18 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+import data from'./../data.json';
+import { useParams } from 'react-router-dom';
 
-const RecipeCard = ({
-  id,
-  recipe_name,
-  image,
-  author_name,
-  category,
-  prep_time,
-  cook_time,
-  total_time,
-  servings,
-  difficulty,
-  ingredients,
-  instructions,
-  tips,
-  // deleteCardByID
-}) => {
-  // const deleteCard=()=>{
-  //   deleteCardByID(id)
-  // }
+
+const RecipeCard = ({}) => {
+  const { id } = useParams(); 
+  const recipe = data[id]; 
+  console.log(recipe);
+
   return (
-    <Card className="w-50 h-50" style={{padding: '20px'}}> 
-       <Card.Img variant="top" src={image} style={{ width: '250px', height: '200px' }}/>
+    <Card  style={{padding: '20px'}}> 
+       <Card.Img variant="right" src={recipe.image} style={{ width: '250px', height: '200px' }}/>
       <Card.Body>
       {/* <button
           style={{ float: "right" }}
@@ -33,32 +23,37 @@ const RecipeCard = ({
           <span className="bi bi-trash"></span>
         </button> */}
        
-        <Card.Title>{recipe_name && `${recipe_name}`}</Card.Title>
-        <Card.Text>{author_name && `Recipe by ${author_name}`}</Card.Text>
-        <Card.Text>{category && `Category: ${category}`}</Card.Text>
-        <Card.Text>{prep_time && `Prep Time: ${prep_time} minutes`}</Card.Text>
-        <Card.Text>{cook_time && `Cook Time: ${cook_time} minutes`}</Card.Text>
-        <Card.Text>{total_time && `Total Time: ${total_time} minutes`}</Card.Text>
-        <Card.Text>{servings && `Servings: ${servings} people`}</Card.Text>
-        <Card.Text>{difficulty && `Difficulty: ${difficulty}`}</Card.Text>
-        <Card.Text>{ingredients && `Ingredients:`}</Card.Text>
-        {ingredients && (
-          <ol>
-            {ingredients.map((item, index) => (
+        <Card.Title>{recipe.recipe_name && `${recipe.recipe_name}`}</Card.Title>
+        <Card.Text>{recipe.author_name && `Recipe by ${recipe.author_name}`}</Card.Text>
+        <CardGroup className="g-4">
+        <Card.Text>{recipe.category && `Category: ${recipe.category}`}</Card.Text>
+        <Card.Text>{recipe.prep_time && `Prep Time: ${recipe.prep_time} minutes`}</Card.Text>
+        <Card.Text>{recipe.cook_time && `Cook Time: ${recipe.cook_time} minutes`}</Card.Text>
+        <Card.Text>{recipe.total_time && `Total Time: ${recipe.total_time} minutes`}</Card.Text>
+        <Card.Text>{recipe.servings && `Servings: ${recipe.servings} people`}</Card.Text>
+        <Card.Text>{recipe.difficulty && `Difficulty: ${recipe.difficulty}`}</Card.Text>
+        </CardGroup>
+        <Card.Text>{recipe.ingredients && `Ingredients:`}</Card.Text>
+        <div>
+        {recipe.ingredients && (
+          <ol style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            {recipe.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ol>
         )}
+        </div>
         <br />
-        <Card.Text>{instructions && `Instructions:`}</Card.Text>
-        {instructions && (
-          <ul>
-            {instructions.map((item, index) => (
+        <div>
+        <Card.Text>{recipe.instructions && `Instructions:`}</Card.Text>
+        {recipe.instructions && (
+          <ol style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>            
+          {recipe.instructions.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
-          </ul>
-        )}
-        <Card.Text>{tips && `Tips: ${tips}`}</Card.Text>
+          </ol>
+        )}</div>
+        <Card.Text>{recipe.tips && `Tips: ${recipe.tips}`}</Card.Text>
       </Card.Body>
     </Card>
   );

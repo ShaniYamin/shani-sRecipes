@@ -7,6 +7,8 @@ import NavBar from './components/NavBar';
 import UserProfile from './pages/UserProfile';
 import UserRecipes from './components/UserRecipes';
 import UserFav from './components/UserFav';
+import RecipeCard from './components/RecipeCard';
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
       <Route path="/">
           <Route index element={<HomePage />} />
           <Route path="recipes" element={<Recipes />} />
+          <Route path="recipes/:id" element={<RecipeCard />} />
           <Route path="recipes/create" element={<CreateRecipe />} />
           <Route path="user/profile" element={<UserProfile />}/>
           <Route path="user/recipes" element={<UserRecipes />}/>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import RecipeCard from './RecipeCard';
+import RecipeTab from './RecipeTab';
 import data from'./../data.json';
 // import { useNavigate } from 'react-router-dom';
 
@@ -44,22 +44,7 @@ function Recipes() {
       <div className="container">
         <div className="row">
             {recipes.map((recipe,index) => (
-                <RecipeCard
-                id={recipe.id}
-                recipe_name={recipe.recipe_name}
-                image={recipe.image}
-                author_name={recipe.author}
-                category={recipe.category}
-                prep_time={recipe.prep_time}
-                cook_time={recipe.cook_time}
-                total_time={recipe.total_time}
-                servings={recipe.servings}
-                difficulty={recipe.difficulty}
-                ingredients={recipe.ingredients}
-                instructions={recipe.instructions}
-                tips={recipe.tips}
-                // deleteCardByID={deleteCardByID}
-                />
+                <RecipeTab recipe={recipe} />
             ))}
            </div>
       </div> }
