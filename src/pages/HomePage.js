@@ -25,12 +25,15 @@ function HomePage() {
         <video src={backgroundVideo} autoPlay loop muted></video>
         <div className='content'>
           <h1 style={{color:'#4169E1',}}>My Passion is Delicious Food</h1>
-          <p>Hey, I am Shani Yamin <br/>
-          As a Computer Science graduate with a demonstrated track record, I secured the top position at the SafeWeb Hackathon,<br/> 
-          showcasing my expertise in full stack development E2E.<br/>
-          Currently serving as a coordinator at ColmanDevClub, I actively contribute to fostering innovation within the tech community.<br/>
-          Passionate about mentorship, particularly empowering young girls in technology, <br/>
-          I am now eager to channel my skills into a dynamic role as a Software Engineer.
+          <h3>Hey, I am Shani Yamin</h3>
+          <p>With a passion for technology as a Computer Science graduate,<br/>
+          I am highly organized and detail-oriented. <br/>
+          Winning the SafeWeb Hackathon showcased my quick learning ability. <br/>
+          As a cooking enthusiast and autodidact, <br/>I am currently learning backend development and creating an E2E RecipesHub website, 
+          <br/>highlighting my expertise in backend development.<br/>
+          I served in C4I Corps as a network technician and team leader, <br/>
+          utilizing my mentorship and communication skills effectively. <br/>
+          Now, I am eager to continue learning and apply my skills in a dynamic role as a <b>Software Engineer</b>.
             </p>
             <div><button className='btn btn-outline-dark' onClick={handleOpenCV}>Go to CV</button></div>
             {console.log(message)}
